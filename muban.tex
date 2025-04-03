@@ -1,0 +1,202 @@
+%用xlatex编译，其余部分可自行根据需求修改
+%遵守开源协议，禁止商业用途
+\documentclass[12pt,a4paper,oneside,UTF8]{ctexart}
+%设置页边距
+\usepackage[left=1.91cm,right=1.91cm,top=2.54cm,bottom=2.54cm]{geometry}
+%需要用到的扩展包
+\usepackage{xeCJK,amsmath,paralist,booktabs,multirow,graphicx,float,subfig,setspace,listings,xcolor}
+\include{caption}
+\usepackage{lastpage} % 确保加载 lastpage 宏包
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
+%去掉链接的红色外框
+\hypersetup{
+	colorlinks=true,
+	linkcolor=black
+}
+%设置页眉页脚以及页码
+\pagestyle{fancy}
+\lhead{华侨大学}
+\rhead{数学科学学院}
+\cfoot{\thepage ~/~\pageref{LastPage}} % 使用 \pageref 替代 \zpageref
+%\rfoot{\today} 
+
+%报告中用到的图片存放在同级文件夹figures中，根据需求自行创建，若无需可删除该行
+% \usepackage{graphicx} % 如果没有使用图形，可以删除这一行
+\graphicspath{{figures/}}
+
+%报告开始
+\begin{document}
+	%设置课程标题
+	\begin{center}
+		\heiti\LARGE{数值计算实验报告}
+	\end{center}
+	
+	%设置实验人信息以及实验时间表格
+	\begin{center}
+		\begin{tabular}{lcr}
+			{\songti 专~业:数学与应用数学} & {\songti 年~级：XXXX} &{\songti 班~级：XXXX} \cr
+      {\songti 姓~名:XXX} & {\songti 学~号：XXXXXXXXXX} \cr
+			{\songti{实~验~名~称：XXXXXX}} & {\songti{实~验~日~期：XXXXXXX}} \cr
+		\end{tabular}
+	\end{center}
+
+	{\noindent}	\rule[-10pt]{17.18cm}{0.05em} %加一条分割线，长度为文本宽度（页面宽度减去两边的空白宽度）
+	
+	%实验题目
+	\begin{center}
+		\LARGE\textbf{实验名称：XXXXXXX}
+	\end{center}
+	
+	%实验目的
+	%\subsection*中的*代表[实验目的]这一标题不含有章节编号，\subsubsection*的*也是这一效果
+	\subsection*{一、实验目的}
+	\begin{enumerate}
+		\item 示例1
+		\item 示例2
+		\item 示例3
+	\end{enumerate}
+	
+	
+	
+	\subsection*{二、实验内容和步骤}
+	填写实验题目
+	
+
+  \subsection*{三、设计思想}
+  将实验所涉及的基础理论、算法原理详尽列出。
+  \begin{enumerate}
+  	\item 理论展示 ： U分解是“矩阵因式分解”的一种，旨在将某个矩阵
+    表示为两个或多个矩阵的乘积。正如其名，LU分解是将矩阵
+    表示为
+    ，其中矩阵
+    代表Lower Triangular（下三角矩阵），矩阵
+    代表Upper Triangular（上三角矩阵）。
+  \end{enumerate}
+
+  \begin{algorithm}[H]
+    \caption{示例算法：求数组最大值}
+    \label{alg:example}
+    \begin{algorithmic}[1]
+    \REQUIRE 一个包含 $n$ 个元素的数组 $A$
+    \ENSURE 数组 $A$ 的最大值
+    \STATE 初始化 $max \gets A[1]$
+    \FOR{$i \gets 2$ 到 $n$}
+        \IF{$A[i] > max$}
+            \STATE $max \gets A[i]$
+        \ENDIF
+    \ENDFOR
+    \RETURN $max$
+    \end{algorithmic}
+    \end{algorithm}
+  
+  
+  \subsection*{四、实验程序}
+列出实验的实施方案、步骤、数据准备、算法流程图以及可能用到的实验设备（硬件和软件）。\\
+  \begin{itemize}
+  \item 实验方案：XXXXXXXXXX
+  \end{itemize}
+
+
+  \begin{itemize}
+      \item 实验步骤：
+      \begin{itemize}
+          \item 步骤1
+          \item 步骤2
+          \item 步骤3
+      \end{itemize}
+      \item 数据准备：
+      \begin{itemize}
+          \item 数据1
+          \item 数据2
+          \item 数据3
+      \end{itemize}
+      \item 算法流程图：见图~\ref{fig:test1}。
+  \end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/test1.jpg}
+    \caption{算法流程图示例}
+    \label{fig:test1}
+  \end{figure}
+
+  \begin{itemize}
+    \item 程序代码：
+    \begin{lstlisting}[language=matlab, caption=示例代码1, label={}]
+      dashd
+      dadw
+      dadwxc
+      sd
+    \end{lstlisting}
+
+    \begin{lstlisting}[language=matlab, caption=示例代码2, label={}]
+      dashd
+      dadw
+      dadwxc
+      sd
+    \end{lstlisting}
+
+  \end{itemize}
+
+
+  \begin{itemize}
+      \item 实验设备：
+      \begin{itemize}
+  	\item 硬件：XXXXXX
+  	\item 软件：XXXXXX
+      \end{itemize}
+  \end{itemize}
+
+	\subsection*{五、实验算例和结果}
+  实验结果应包括试验的原始数据、中间结果及最终结果，
+  复杂的结果可以用表格或图形形式实现,较为简单的结果可以与实验结果分析合并出现。\\
+  \begin{itemize}
+  	\item 算例1：XXXXXX
+  	\begin{itemize}
+  		\item 结果1：XXXXXX
+  		\item 结果2：XXXXXX
+  	\end{itemize}
+
+  	\item 算例2：XXXXXX
+  	\begin{itemize}
+  		\item 结果1：XXXXXX
+  		\item 结果2：XXXXXX
+  	\end{itemize}
+  \end{itemize}
+
+  \subsection*{六、实验结果分析}
+  实验结果分析应包括对实验结果的分析、对比、讨论等，  
+  以及对实验结果的总结和归纳。\\  
+  \begin{itemize}
+  	\item 分析1：XXXXXX
+  	\item 分析2：XXXXXX
+  	\item 分析3：XXXXXX
+  \end{itemize}
+
+  \subsection*{七、实验出现的问题及体会}
+  
+  \begin{itemize}
+    \item 问题1：XXXXXX
+    \item 问题2：XXXXXX
+  \end{itemize}
+
+	{\noindent}	\rule[-10pt]{17.18cm}{0.05em} 
+
+  \subsection*{\textbf{教师评语}}
+  \vspace{2cm} % 第一行空白
+  \vspace{2cm} % 第二行空白
+  \vspace{2cm} % 第三行空白
+  \vspace{2cm} % 第四行空白
+
+  \begin{flushright}
+    \textbf{指导教师：\underline{\hspace{3cm}}} \\ % 换行显示
+    \textbf{\underline{\hspace{1.5cm}}年\underline{\hspace{1.5cm}}月\underline{\hspace{1.5cm}}日}
+  \end{flushright}
+
+\end{document}
+% 在文档末尾添加以下内容以刷新页码
+\clearpage
+\label{LastPage} % 使用 \label 标记最后一页，用xlatex编译即可正确显示页码！！！第一行的页码会显示为？？，第二次编译后会显示正确的页码（图片同理） 
